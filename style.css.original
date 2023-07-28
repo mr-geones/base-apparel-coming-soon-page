@@ -13,8 +13,8 @@
   --fw-regular: 400;
   --fw-semibold: 600;
 
-  --clr-primary: hsl(0, 36%, 70%);
-  --clr-secondary: hsl(0, 93%, 68%);
+  --clr-primary-1: hsl(0, 36%, 70%);
+  --clr-primary-2: hsl(0, 93%, 68%);
 
   --clr-neutral: hsl(0, 6%, 24%);
 
@@ -26,10 +26,11 @@
 }
 body {
   background-image: url("images/dark-gray-tile.png");
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 100vh;
-  height: 100svh;
 }
 
 div {
@@ -64,7 +65,7 @@ h1 {
 }
 
 span {
-  color: var(--clr-primary);
+  color: var(--clr-primary-1);
   font-size: 1em;
   font-weight: var(--fw-light);
   display: block;
@@ -72,7 +73,7 @@ span {
 
 form {
   height: 55px;
-  border: 1px solid var(--clr-primary);
+  border: 1px solid var(--clr-primary-1);
   border-radius: 2rem;
   position: relative;
 }
@@ -102,7 +103,7 @@ form input:focus {
 }
 
 ::placeholder {
-  color: var(--clr-primary);
+  color: var(--clr-primary-1);
 }
 
 #submit {
@@ -126,7 +127,7 @@ form input:focus {
 }
 
 .content {
-  color: var(--clr-primary);
+  color: var(--clr-primary-1);
   font-weight: var(--fw-regular);
   font-size: 1rem;
   line-height: 1.8rem;
@@ -138,21 +139,21 @@ form input:focus {
 }
 
 .thanks {
-  color: var(--clr-primary);
+  color: var(--clr-primary-1);
   font-size: 0.85rem;
   margin-top: 4rem;
   margin-left: 2rem;
 }
 
 .error {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-2);
   font-size: 0.85rem;
   margin-top: 4rem;
   margin-left: 2rem;
 }
 
 .error-border {
-  border: 2px solid var(--clr-secondary);
+  border: 2px solid var(--clr-primary-2);
 }
 
 .error-icon {
@@ -169,13 +170,50 @@ form input:focus {
   position: relative;
   bottom: -7.15rem;
   font-size: 0.6rem;
-  color: var(--clr-primary);
+  color: var(--clr-primary-1);
 }
 
 .attribution a {
   font-size: 0.8rem;
   text-decoration: none;
-  color: var(--clr-secondary);
+  color: var(--clr-primary-2);
+}
+
+/*
+------------------- 
+ Styles for Large Screens
+-------------------
+*/
+
+@media only screen and (max-width: 1439px) {
+  div {
+    width: 68rem;
+  }
+  main {
+    padding-left: 5rem;
+    padding-right: 37rem;
+    background: no-repeat 120% url("images/hero-desktop.jpg");
+  }
+}
+
+/*
+------------------- 
+ Styles for Medium Screens
+-------------------
+*/
+
+@media only screen and (max-width: 1089px) {
+  div {
+    width: 62rem;
+  }
+  main {
+    padding-left: 5rem;
+    padding-right: 32rem;
+    background: no-repeat 150% url("images/hero-desktop.jpg");
+  }
+  .error-icon {
+    background: no-repeat 15rem center url("images/icon-error.svg");
+  }
 }
 
 /*
@@ -184,33 +222,24 @@ form input:focus {
 -------------------
 */
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 999px) {
   body {
     height: 100%;
-    background-image: none;
-    background-color: var(--clr-gradient-1b);
   }
   div {
-    width: 100%;
+    width: 23.4rem;
     height: 55rem;
-    background-image: none;
-    display: grid;
-    place-content: center;
   }
   main {
-    padding: 0;
-    background-image: url("images/hero-mobile.jpg");
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: 4.4rem;
+    padding: 0rem 2rem 0 2rem;
+    background: no-repeat url("images/hero-mobile.jpg");
+    background-position-y: 5.6rem;
     text-align: center;
     height: 100%;
-    max-width: 23.4rem;
   }
   img {
-    margin-top: 0.5rem;
-    display: block;
-    position: absolute;
+    margin-top: 2rem;
+    float: left;
     max-width: 7rem;
   }
   h1,
@@ -235,12 +264,10 @@ form input:focus {
   }
   .error,
   .thanks {
-    text-align: center;
+    text-align: left;
   }
   .error-icon {
-    background-image: url("images/icon-error.svg");
-    background-repeat: no-repeat;
-    background-position-x: 13rem;
+    background: no-repeat 11rem center url("images/icon-error.svg");
   }
   .attribution {
     margin-top: 5rem;
