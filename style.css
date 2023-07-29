@@ -28,8 +28,7 @@ body {
   background-image: url("images/dark-gray-tile.png");
   display: grid;
   place-content: center;
-  height: 100vh;
-  height: 100svh;
+  height: 90vh;
 }
 
 div {
