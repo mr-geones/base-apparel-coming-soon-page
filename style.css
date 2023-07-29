@@ -23,6 +23,8 @@
 
   --clr-gradient-2a: hsl(0, 80%, 86%);
   --clr-gradient-2b: hsl(0, 74%, 74%);
+
+  --margin: 1rem;
 }
 body {
   background-image: url("images/dark-gray-tile.png");
@@ -211,6 +213,7 @@ form input:focus {
     display: block;
     position: absolute;
     max-width: 7rem;
+    padding-left: 1rem;
   }
   h1,
   span {
@@ -222,6 +225,12 @@ form input:focus {
     line-height: 1.1em;
     padding-top: 25rem;
   }
+  h1,
+  p,
+  form {
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+  }
   #submit {
     width: 4.5rem;
   }
@@ -231,6 +240,8 @@ form input:focus {
   .content {
     font-size: 0.9rem;
     line-height: 1.5rem;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
   }
   .error,
   .thanks {
@@ -239,7 +250,7 @@ form input:focus {
   .error-icon {
     background-image: url("images/icon-error.svg");
     background-repeat: no-repeat;
-    background-position-x: 13rem;
+    background-position-x: 12rem;
   }
   .attribution {
     margin-top: 5rem;
